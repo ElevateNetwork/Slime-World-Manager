@@ -121,9 +121,9 @@ public class MongoLoader extends UpdatableLoader {
             if (!readOnly) {
                 long lockedMillis = worldDoc.getLong("locked");
 
-                if (System.currentTimeMillis() - lockedMillis <= LoaderUtils.MAX_LOCK_TIME) {
+                /* if (System.currentTimeMillis() - lockedMillis <= LoaderUtils.MAX_LOCK_TIME) {
                     throw new WorldInUseException(worldName);
-                }
+                } */
 
                 updateLock(worldName, true);
             }
